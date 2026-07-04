@@ -9,7 +9,8 @@ import Background from "@/components/Background";
 import AuthCard from "@/components/AuthCard";
 import Logo from "@/components/Logo";
 
-
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -26,7 +27,7 @@ const [showPassword, setShowPassword] = useState(false);
   try {
     setLoading(true);
 
-    const res = await fetch("http://localhost:5000/api/auth/login", {
+    const res = await fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
