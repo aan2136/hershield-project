@@ -5,6 +5,9 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import AlarmPlayer from './AlarmPlayer';
 import VoiceRecognizer from './VoiceRecognizer';
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
 interface EmergencyVerificationModalProps {
   onSafe: () => void;
   onSOS: () => void;
@@ -94,7 +97,7 @@ const EmergencyVerificationModal: React.FC<EmergencyVerificationModalProps> = ({
             );
 
             try {
-              await fetch("http://localhost:5000/api/sos", {
+              await fetch(`${API_URL}/api/sos`, {
                 method: "POST",
                 headers: {
   "Content-Type": "application/json",
@@ -424,3 +427,4 @@ const EmergencyVerificationModal: React.FC<EmergencyVerificationModalProps> = ({
 };
 
 export default EmergencyVerificationModal;
+
