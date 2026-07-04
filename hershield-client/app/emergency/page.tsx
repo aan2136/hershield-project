@@ -7,6 +7,9 @@ import Background from "@/components/Background";
 import AuthCard from "@/components/AuthCard";
 import Logo from "@/components/Logo";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
 interface EmergencyContact {
   name: string;
   relation: string;
@@ -49,7 +52,7 @@ export default function EmergencyPage() {
       setLoading(true);
 
       const res = await fetch(
-        "http://localhost:5000/api/emergency-contacts",
+        `${API_URL}/api/emergency-contacts`,
         {
           method: "POST",
           headers: {
