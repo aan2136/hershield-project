@@ -1,15 +1,18 @@
 const express = require("express");
-
 const router = express.Router();
 
+// Import controller
 const {
-  predictRoute,
-  detectAnomaly,
-  getWeather,
+  getRoutes,
+  createRoute,
+  updateRoute,
+  deleteRoute,
 } = require("../controllers/routeController");
 
-router.post("/predict", predictRoute);
-router.post("/anomaly", detectAnomaly);
-router.get("/weather", getWeather);
+// Routes
+router.get("/routes", getRoutes);
+router.post("/routes", createRoute);
+router.put("/routes/:id", updateRoute);
+router.delete("/routes/:id", deleteRoute);
 
 module.exports = router;
