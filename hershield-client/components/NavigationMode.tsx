@@ -35,7 +35,7 @@ interface NavigationModeProps {
   showEmergency: boolean;
   onAcknowledgeEmergency: () => void;
   onStop: () => void;
-  mapRef: React.RefObject<MapHandle>;
+  mapRef: React.RefObject<MapHandle | null>;
   onScreamDetected: () => void;
 }
 
