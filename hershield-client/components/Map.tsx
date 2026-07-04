@@ -200,7 +200,6 @@ const Map = forwardRef<MapHandle, MapProps>(
           fadeAnimation={true}
           markerZoomAnimation={true}
           preferCanvas={true}
-          tap={true}
           attributionControl={false}
           style={{ width: '100%', height: '100%' }}
           whenReady={() => {
