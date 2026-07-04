@@ -9,6 +9,9 @@ import Background from "@/components/Background";
 import AuthCard from "@/components/AuthCard";
 import Logo from "@/components/Logo";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
 export default function VoicePage() {
 
   const mediaRecorder = useRef<MediaRecorder | null>(null);
@@ -125,7 +128,7 @@ export default function VoicePage() {
     formData.append("email", email || "");
 
     const res = await axios.post(
-      "http://localhost:5000/api/auth/upload-voice",
+      `${API_URL}/api/auth/upload-voice`,
       formData,
       {
         headers: {
