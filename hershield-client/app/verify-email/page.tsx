@@ -9,6 +9,9 @@ import Background from "@/components/Background";
 import AuthCard from "@/components/AuthCard";
 import Logo from "@/components/Logo";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
 export default function VerifyEmailPage() {
   const router = useRouter();
 
@@ -81,7 +84,7 @@ export default function VerifyEmailPage() {
       const enteredOTP = otp.join("");
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/verify-otp",
+        `${API_URL}/api/auth/verify-otp`,
         {
           email,
           otp: enteredOTP,
