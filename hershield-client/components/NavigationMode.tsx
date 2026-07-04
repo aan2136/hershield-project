@@ -25,7 +25,7 @@ interface NavigationModeProps {
   onAcknowledgeEmergency: () => void;
   onStop: () => void;
   mapRef: React.RefObject<MapHandle | null>;
-  onScreamDetected: () => void;
+  onScreamDetected?: () => void;
 }
 const FALLBACK_INSTRUCTION = 'Follow the highlighted safe route';
 const STARTUP_GRACE_PERIOD_MS = 10000;
@@ -54,7 +54,7 @@ const NavigationMode: React.FC<NavigationModeProps> = ({
       return;
     }
     console.log("Emergency accepted after startup");
-    onScreamDetected();
+    onScreamDetected?.();
   };
   const handleRecenter = () => {
     mapRef.current?.recenter();
@@ -120,3 +120,4 @@ const NavigationMode: React.FC<NavigationModeProps> = ({
   );
 };
 export default NavigationMode;
+
