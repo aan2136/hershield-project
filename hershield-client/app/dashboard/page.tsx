@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import {
   detectAnomaly,
   fetchWeather,
@@ -18,7 +19,20 @@ import {
   type RoutePrediction,
 } from "@/lib/api";
 import NavigationMode from "@/components/NavigationMode";
-import Map, { MapHandle } from "@/components/Map";
+import type { MapHandle } from "@/components/Map";
+
+// Fix: "window is not defined" during SSR/prerendering.
+// Leaflet touches `window` at module-evaluation time, so a static
+// import bundles it into the server chunk and crashes on prerender.
+// Loading it dynamically with ssr:false keeps it client-only.
+const Map = dynamic(() => import("@/components/Map"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-[400px] items-center justify-center text-slate-400">
+      Loading map...
+    </div>
+  ),
+});
 
 interface JourneyMetrics {
   distance_km: number;
@@ -417,3 +431,4 @@ export default function JourneyPage() {
     </div>
   );
 }
+
