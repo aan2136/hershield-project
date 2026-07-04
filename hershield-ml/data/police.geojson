@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "police",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "element": "node", "id": 308931002, "name": null, "amenity": "police" }, "geometry": { "type": "Point", "coordinates": [ 77.3375263, 28.5779649 ] } },
+{ "type": "Feature", "properties": { "element": "node", "id": 9659078217, "name": "Police", "amenity": "police" }, "geometry": { "type": "Point", "coordinates": [ 77.3845655, 28.5289358 ] } },
+{ "type": "Feature", "properties": { "element": "node", "id": 13835547209, "name": null, "amenity": "police" }, "geometry": { "type": "Point", "coordinates": [ 77.3237677, 28.5669719 ] } },
+{ "type": "Feature", "properties": { "element": "way", "id": 68577309, "name": null, "amenity": "police" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 77.3657954, 28.5604914 ], [ 77.3667462, 28.5604213 ], [ 77.3666543, 28.5594605 ], [ 77.3657035, 28.5595307 ], [ 77.3657954, 28.5604914 ] ] ] } },
+{ "type": "Feature", "properties": { "element": "way", "id": 157808427, "name": "Police Station Sector-12", "amenity": "police" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 77.3406057, 28.5932452 ], [ 77.3407565, 28.5930903 ], [ 77.3408874, 28.5931758 ], [ 77.3407366, 28.5933307 ], [ 77.3406057, 28.5932452 ] ] ] } },
+{ "type": "Feature", "properties": { "element": "way", "id": 351566963, "name": "Noida Sector 24 Police Station", "amenity": "police" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 77.3514861, 28.5891125 ], [ 77.3515813, 28.5890155 ], [ 77.3514525, 28.5889181 ], [ 77.3513573, 28.5890151 ], [ 77.3514861, 28.5891125 ] ] ] } },
+{ "type": "Feature", "properties": { "element": "way", "id": 474660956, "name": "Sector 135 Police", "amenity": "police" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 77.4014721, 28.5000519 ], [ 77.4015097, 28.4998954 ], [ 77.4016388, 28.4998483 ], [ 77.4016307, 28.4998271 ], [ 77.401674, 28.4998103 ], [ 77.401683, 28.4998294 ], [ 77.4017072, 28.49982 ], [ 77.4017085, 28.4998141 ], [ 77.4017347, 28.4998123 ], [ 77.401737, 28.4998247 ], [ 77.4018078, 28.4998097 ], [ 77.4018128, 28.4997902 ], [ 77.4019053, 28.4998032 ], [ 77.4018688, 28.4999278 ], [ 77.401787, 28.499909 ], [ 77.4016069, 28.4999797 ], [ 77.4015975, 28.5000233 ], [ 77.401558, 28.500015 ], [ 77.4015446, 28.5000645 ], [ 77.4014721, 28.5000519 ] ] ] } },
+{ "type": "Feature", "properties": { "element": "way", "id": 928774735, "name": null, "amenity": "police" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 77.3401302, 28.5392458 ], [ 77.3404021, 28.5396067 ], [ 77.340869, 28.5393197 ], [ 77.340531, 28.5388813 ], [ 77.3403434, 28.5390554 ], [ 77.3401302, 28.5392458 ] ] ] } },
+{ "type": "Feature", "properties": { "element": "way", "id": 1417035696, "name": "Police Chowki, Sector 18", "amenity": "police" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 77.3239043, 28.5710744 ], [ 77.3238883, 28.5709464 ], [ 77.3237959, 28.5709553 ], [ 77.323801, 28.5709965 ], [ 77.3238403, 28.5709927 ], [ 77.3238511, 28.5710795 ], [ 77.3239043, 28.5710744 ] ] ] } },
+{ "type": "Feature", "properties": { "element": "way", "id": 1485632169, "name": "Cyber Crime Police Station", "amenity": "police" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 77.3514339, 28.5716559 ], [ 77.3515526, 28.5717469 ], [ 77.3516043, 28.5716948 ], [ 77.3514855, 28.5716039 ], [ 77.3514339, 28.5716559 ] ] ] } }
+]
+}
