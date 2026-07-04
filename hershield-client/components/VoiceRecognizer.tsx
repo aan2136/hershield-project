@@ -1,6 +1,5 @@
 // components/VoiceRecognizer.tsx
 'use client';
-
 import { useEffect, useRef } from 'react';
 
 interface VoiceRecognizerProps {
@@ -8,7 +7,45 @@ interface VoiceRecognizerProps {
   onFailure: () => void;
 }
 
-type SpeechRecognitionCtor = new () => SpeechRecognition;
+// Minimal local type definitions for the Web Speech API.
+// TypeScript's built-in DOM lib does not ship these types (the API is
+// still non-standard / vendor-prefixed in most browsers), so we declare
+// just the shape this component actually uses instead of relying on
+// globals that don't exist in lib.dom.d.ts.
+interface SpeechRecognitionAlternative {
+  transcript: string;
+  confidence: number;
+}
+
+interface SpeechRecognitionResultLike {
+  readonly length: number;
+  readonly isFinal: boolean;
+  [index: number]: SpeechRecognitionAlternative;
+}
+
+interface SpeechRecognitionResultListLike {
+  readonly length: number;
+  [index: number]: SpeechRecognitionResultLike;
+}
+
+interface SpeechRecognitionEventLike extends Event {
+  readonly resultIndex: number;
+  readonly results: SpeechRecognitionResultListLike;
+}
+
+interface SpeechRecognitionLike extends EventTarget {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  maxAlternatives: number;
+  onresult: ((event: SpeechRecognitionEventLike) => void) | null;
+  onerror: (() => void) | null;
+  onend: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+}
+
+type SpeechRecognitionCtor = new () => SpeechRecognitionLike;
 
 const ACCEPTED_PHRASES = ['i am safe', "i'm safe"];
 
@@ -30,7 +67,7 @@ const VoiceRecognizer: React.FC<VoiceRecognizerProps> = ({
   onSuccess,
   onFailure,
 }) => {
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const successRef = useRef(false);
   const stoppedRef = useRef(false);
 
@@ -52,7 +89,7 @@ const VoiceRecognizer: React.FC<VoiceRecognizerProps> = ({
     recognition.lang = 'en-US';
     recognition.maxAlternatives = 3;
 
-    recognition.onresult = (event: SpeechRecognitionEvent) => {
+    recognition.onresult = (event: SpeechRecognitionEventLike) => {
       for (let i = event.resultIndex; i < event.results.length; i++) {
         const result = event.results[i];
         if (!result.isFinal) continue;
