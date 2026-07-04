@@ -8,7 +8,7 @@ const { authenticate } = require("../middleware/authMiddleware");
 
 const {
   createEmergencyContacts,
-} = require("../controllers/emergencyContactController");
+} = require("../controllers/Emergencycontactcontroller");
 
 router.post(
   "/emergency-contacts",
