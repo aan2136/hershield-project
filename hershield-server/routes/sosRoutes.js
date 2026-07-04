@@ -1,12 +1,17 @@
-// routes/sosRoutes.js
-
-const express = require('express');
-const { sendSos } = require('../controllers/sosController');
-const { authenticate } = require('../middleware/authMiddleware');
-
+const express = require("express");
 const router = express.Router();
 
-// POST /api/sos  (mount this router at "/api" in your main server file)
-router.post('/sos', authenticate, sendSos);
+// Import controller
+const {
+  triggerSOS,
+  getSOSHistory,
+  cancelSOS,
+} = require("../controllers/sosController");
+
+// Routes
+router.post("/sos/trigger", triggerSOS);
+router.get("/sos/history", getSOSHistory);
+router.post("/sos/cancel", cancelSOS);
 
 module.exports = router;
+
