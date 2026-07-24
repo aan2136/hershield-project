@@ -4,13 +4,13 @@ HerShield is an AI-powered women's safety platform that combines **Machine Learn
 
 Built using **Next.js**, **Node.js**, **Flask**, **PostgreSQL**, **Prisma**, **OpenStreetMap**, and **Machine Learning**.
 
----
+
 
 ## 📌 Features
 
 ### 🚶 Safe Journey Navigation
 - AI-based safest route recommendation
-- Real-time route monitoring
+- Real-time route monitoring    
 - Live GPS tracking
 - Weather-aware route prediction
 - Distance & ETA calculation
@@ -193,22 +193,21 @@ npm run dev
 Runs on: `http://localhost:3000`
 
 ### Backend
-```bash
+
 cd hershield-server
 npm install
 npm run dev
-```
+
 Runs on: `http://localhost:5000`
 
 ### ML Service
-```bash
+
 cd hershield-ml
 pip install -r requirements.txt
 python app.py
-```
 Runs on: `http://localhost:8000`
 
----
+
 
 ## 🔑 Environment Variables
 
@@ -226,11 +225,11 @@ SMTP_PASS=your_app_password
 SMTP_FROM=your_email@gmail.com
 ```
 
----
+
 
 ## 🔄 User Workflow
 
-```
+
 Register
    ↓
 Verify OTP
@@ -250,9 +249,9 @@ Emergency Detected
 30-second Voice Verification
    ↓
 SOS Email Sent
-```
 
----
+
+
 
 ## 🚀 Future Enhancements
 
@@ -266,15 +265,18 @@ SOS Email Sent
 - [ ] Real-time police assistance
 - [ ] Cloud deployment with Docker & Kubernetes
 
----
+
 
 ## 👤 Contributors
 
 **Aan Rajput**
-B.Tech Information Technology
-Banasthali Vidyapith
+B.Tech IT
 
----
+**Nandni Sharma**
+B.Tech CSE
+
+
+
 
 ## 📄 License
 
