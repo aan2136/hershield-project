@@ -1,8 +1,7 @@
 const express = require("express");
-const upload = require("../config/multer");
-
 const router = express.Router();
 
+// Import controller
 const {
   signup,
   verifyOTP,
@@ -10,15 +9,21 @@ const {
   uploadVoice,
 } = require("../controllers/authController");
 
+// Optional: multer setup for file uploads
+let upload;
+try {
+  upload = require("../config/multer");
+} catch (err) {
+  console.warn("Multer config not found, voice upload may not work");
+  upload = {
+    single: () => (req, res, next) => next(),
+  };
+}
+
+// Routes
 router.post("/signup", signup);
-
 router.post("/verify-otp", verifyOTP);
-
 router.post("/login", login);
-router.post(
-  "/upload-voice",
-  upload.single("voice"),
-  uploadVoice
-);
+router.post("/upload-voice", upload.single("voice"), uploadVoice);
 
 module.exports = router;
